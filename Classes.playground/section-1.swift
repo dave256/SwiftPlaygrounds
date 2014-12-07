@@ -89,6 +89,13 @@ jane.description
 jane.changeFirstName("Jane", lastName: "Smith")
 jane.description
 
+// classes are reference types
+// so now both jane and jane2 refer to the same object
+// and even though jane2 is decalred with let, that means it cannot point to a different object, the object it refers to can mutate
+let jane2 = jane
+
+// both jane and jane2 refer to the same object so have the new data
 jane.changeFirstName("Jane", lastName: "Doe", idNumber: "987654")
 jane.description
+jane2.description
 
