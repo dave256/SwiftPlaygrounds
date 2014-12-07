@@ -49,7 +49,7 @@ me.changeFirstName("David", lastName: "Reed")
 me.description
 
 //----------------------------------------------------------------------
-// MARK: subclas
+// MARK: subclass
 
 class Student: Person {
     // additonal property
