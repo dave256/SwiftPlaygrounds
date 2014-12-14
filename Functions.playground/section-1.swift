@@ -155,10 +155,9 @@ swap(&a, &b)
 a
 b
 
-
-
 //----------------------------------------------------------------------
 // MARK: simple Generic example
+// note Swift has this builtin function named swap so writing our own is unnecessary
 func swapGeneric<T>(inout x: T, inout y: T) {
     let temp: T = x
     x = y
@@ -172,7 +171,6 @@ a
 b
 f1
 f2
-
 
 //----------------------------------------------------------------------
 // MARK: Function Types as Parameter Types
