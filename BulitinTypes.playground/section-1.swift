@@ -1,3 +1,6 @@
+//----------------------------------------------------------------------
+// IMPORTANT: builtin types (including strings, arrays, dictionaries) are value types
+// assignment makes a copy
 
 //----------------------------------------------------------------------
 // MARK: constant and variable declarations
@@ -11,7 +14,6 @@ let constantIntegerValue = 42
 
 // use var to define a variable
 var variableIntegerValue = 20
-
 
 //----------------------------------------------------------------------
 // MARK: integer types
