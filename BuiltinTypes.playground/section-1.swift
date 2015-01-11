@@ -2,6 +2,8 @@
 // IMPORTANT: builtin types (including strings, arrays, dictionaries) are value types
 // assignment makes a copy
 
+import Foundation
+
 //----------------------------------------------------------------------
 // MARK: constant and variable declarations
 // variables have a type and implicitly set when initialized
@@ -58,6 +60,23 @@ var s = "abc"
 // print and println take one parameter (and optional second parameter that is a TargetStream
 // string formatting is done by \(varname)
 println("ui=\(ui) and s =\(s)")
+
+//----------------------------------------------------------------------
+// MARK: string formatting
+// similar to Python/C formatting
+// not really built-in have to import Foundation for this to work
+// %d or % i for Int
+// %ud or %ui for Uint
+// %f for Float
+// %lf for Double
+// %@ for any NSObject subclasses (calls the description method)
+
+let fs1 = String(format: "i=%2d pi=%0.3f", i, doubleValue)
+
+// note, for NSNumber, have to cast it (or use %@ but then can't format to total number of spaces or decimals
+let num: NSNumber = 3.14159
+let fs2 = String(format: "pi=%0.3f", num as Double)
+let fs3 = String(format: "pi=%@", num)
 
 //----------------------------------------------------------------------
 // MARK: tuples
