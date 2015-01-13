@@ -54,14 +54,12 @@ var e2: MyError = .Error("An error message")
 switch e1 {
 case .Ok:
     println("no error")
-    break
 case .Error(let msg):
     println("error: \(msg)")
 }
 switch e2 {
 case .Ok:
     println("no error")
-    break
 case .Error(let msg):
     println("error: \(msg)")
 }
@@ -72,7 +70,6 @@ e2 = .Ok
 switch e2 {
 case .Ok:
     println("no error")
-    break
 case .Error(let msg):
     println("error: \(msg)")
 }
@@ -81,7 +78,6 @@ case .Error(let msg):
 switch e3 {
 case .Ok:
     println("no error")
-    break
 case .Error(let msg):
     println("error: \(msg)")
 }
