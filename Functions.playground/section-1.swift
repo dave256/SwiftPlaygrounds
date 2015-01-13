@@ -82,12 +82,12 @@ else {
 // MARK: specifying external parameter names for readability when calling
 
 // when specifying external names, the syntax is external internal: Type
-func join(string s1: String, toString s2: String, withJointer joiner: String) -> String {
+func join(string s1: String, toString s2: String, withJoiner joiner: String) -> String {
     return s1 + joiner + s2
 }
 
 // must specify external parameter names when calling
-println(join(string: "hello", toString: "world", withJointer: ","))
+println(join(string: "hello", toString: "world", withJoiner: ","))
 
 // use # sign to indicate the same name should be used for both external and internal parameter name
 func join2(#string: String, #toString: String, #joiner: String) -> String {
