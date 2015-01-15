@@ -8,8 +8,8 @@
 
 class Person {
 
-    var firstName: String;
-    var lastName = "";
+    var firstName: String
+    var lastName = ""
 
     // no func in front of init
     // if initialized all instance variables during declaration (as did with lastName above), a default initializer is automatically created
@@ -17,8 +17,8 @@ class Person {
         // use self if parameter has same name as instance variable, otherwisee
         // self is unnecessary
 
-        self.firstName = firstName;
-        self.lastName = lastName;
+        self.firstName = firstName
+        self.lastName = lastName
     }
 
     // convenience initializers must call a designated initializer
