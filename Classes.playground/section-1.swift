@@ -57,12 +57,12 @@ class Student: Person {
 
     // would need to prefix with override if superclass had init method with same parameter signature
     init(firstName: String, lastName: String, idNumber: String) {
-        // must initialize new instance variables before calling supper
+        // must initialize new instance variables before calling super
         self.idNumber = idNumber
         // must delegate up to a superclass designated initializer
         super.init(firstName: firstName, lastName: lastName)
 
-        // after calling super, can override values of ineherited properites
+        // after calling super, can override values of inherited properites
         // self.firstName = "John"
     }
 
@@ -83,7 +83,7 @@ class Student: Person {
     }
 }
 
-var jane = Student(firstName: "Jane", lastName: "Doe", idNumber: "123456")
+let jane = Student(firstName: "Jane", lastName: "Doe", idNumber: "123456")
 jane.description
 // calls method in base class
 jane.changeFirstName("Jane", lastName: "Smith")
@@ -98,4 +98,5 @@ let jane2 = jane
 jane.changeFirstName("Jane", lastName: "Doe", idNumber: "987654")
 jane.description
 jane2.description
+jane2.changeFirstName("Jane", lastName: "Jones", idNumber: "987654")
 
