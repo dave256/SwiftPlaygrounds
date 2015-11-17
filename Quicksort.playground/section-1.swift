@@ -6,7 +6,8 @@ import XCPlayground
 // function to allow visualizinng an array as a graph
 func visualize<T>(data: [T], identifier: String) {
     for x in data {
-        XCPCaptureValue(identifier, x)
+        XCPlaygroundPage.currentPage.captureValue(x, withIdentifier: identifier)
+        //XCPCaptureValue(identifier, value: x)
     }
 }
 
@@ -35,10 +36,10 @@ func median3<T: Comparable>(inout items : [T], left: Int, right: Int) -> T {
 
 func quicksort<T: Comparable>(inout items: [T], left: Int, right: Int) {
     if left < right - 1 {
-        let pivot = median3(&items, left, right)
+        let pivot = median3(&items, left: left, right: right)
 
         // visualize array
-        visualize(items, "begin: pivot: \(pivot), left: \(left), right: \(right)")
+        visualize(items, identifier: "begin: pivot: \(pivot), left: \(left), right: \(right)")
 
         var i = left
         var j = right - 1
@@ -72,13 +73,13 @@ func quicksort<T: Comparable>(inout items: [T], left: Int, right: Int) {
         (items[i], items[right-1]) = (items[right-1], items[i])
 
         // recursively sort left section
-        quicksort(&items, left, i-1)
+        quicksort(&items, left: left, right: i-1)
 
         // recursively sort right section
-        quicksort(&items, i+1, right)
+        quicksort(&items, left: i+1, right: right)
 
         // visualize array
-        visualize(items, "end: pivot: \(pivot), left: \(left), right: \(right)")
+        visualize(items, identifier: "end: pivot: \(pivot), left: \(left), right: \(right)")
     }
     // base case when left < right
     else if left < right {
@@ -87,7 +88,7 @@ func quicksort<T: Comparable>(inout items: [T], left: Int, right: Int) {
             (items[left], items[right]) = (items[right], items[left])
         }
     }
-}
+    }
 
 /*
 var data = [Int]()
@@ -101,8 +102,8 @@ data
 var data = [47, 31, 0, 30, 17, 83, 13, 12, 71, 33, 23, 38, 35, 48, 58, 88, 61, 90, 10, 21]
 
 
-visualize(data, "Start")
+visualize(data, identifier: "Start")
 // press the icon on far right of displayed numbers to visualize
-quicksort(&data, 0, 19)
-visualize(data, "End")
+quicksort(&data, left: 0, right: 19)
+visualize(data, identifier: "End")
 
