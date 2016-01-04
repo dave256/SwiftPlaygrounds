@@ -4,12 +4,12 @@
 //----------------------------------------------------------------------
 // MARK: functions with no return value
 func helloWorld() {
-    println("hello world")
+    print("hello world")
 }
 helloWorld()
 
 func hello(name: String) {
-    println("hello " + name);
+    print("hello " + name);
 }
 hello("Dave")
 
@@ -19,13 +19,13 @@ func helloString(name: String) -> String {
     let greeting = "hello \(name)"
     return greeting
 }
-println(helloString("Jon"))
+print(helloString("Jon"))
 
 func helloFullName(first : String, last: String) -> String {
     return "hello \(first) \(last)"
 }
 
-println(helloFullName("Dave", "Reed"))
+print(helloFullName("Dave", "Reed"))
 
 //----------------------------------------------------------------------
 // MARK: functions that return multiple values as a tuple
@@ -60,22 +60,22 @@ func minMaxOpt(array: [Int]) -> (min: Int, max: Int)? {
 
 let emptyItems = [Int]()
 let items = [3, 1, 4, 1, 5, 9]
-println(minMax(items))
+print(minMax(items))
 
 // can assign multiple variables to it
 let (min, max) = minMax(items)
-println("\(min) \(max)")
+print("\(min) \(max)")
 
 // assign one value and check if nil returned
 if let bounds = minMaxOpt(items) {
-    println("min = \(bounds.min) max = \(bounds.max)")
+    print("min = \(bounds.min) max = \(bounds.max)")
 }
 
 if let bounds = minMaxOpt(emptyItems) {
-    println("min = \(bounds.min) max = \(bounds.max)")
+    print("min = \(bounds.min) max = \(bounds.max)")
 }
 else {
-    println("empty array")
+    print("empty array")
 }
 
 //----------------------------------------------------------------------
@@ -87,21 +87,21 @@ func join(string s1: String, toString s2: String, withJoiner joiner: String) -> 
 }
 
 // must specify external parameter names when calling
-println(join(string: "hello", toString: "world", withJoiner: ","))
+print(join(string: "hello", toString: "world", withJoiner: ","))
 
 // use # sign to indicate the same name should be used for both external and internal parameter name
-func join2(#string: String, #toString: String, #joiner: String) -> String {
+func join2(string string: String, toString: String, joiner: String) -> String {
     return string + joiner + toString
 }
 
-println(join2(string: "hello", toString: "world", joiner: ","))
+print(join2(string: "hello", toString: "world", joiner: ","))
 
 //----------------------------------------------------------------------
 // MARK: default parameter values
 
 // default values specified with = after Type and automatically have an external name
 // note left off external name of first parameter
-func join3(s1 : String, #toString: String, joiner: String = " ") -> String {
+func join3(s1 : String, toString: String, joiner: String = " ") -> String {
     return s1 + joiner + toString
 }
 
@@ -158,7 +158,7 @@ b
 //----------------------------------------------------------------------
 // MARK: simple Generic example
 // note Swift has this builtin function named swap so writing our own is unnecessary
-func swapGeneric<T>(inout x: T, inout y: T) {
+func swapGeneric<T>(inout x: T, inout _ y: T) {
     let temp: T = x
     x = y
     y = temp
@@ -192,7 +192,7 @@ func applyFunc(f : (Int) -> Int, x : Int) -> Int {
     return f(x)
 }
 
-applyFunc(fCube, 3)
+applyFunc(fCube, x: 3)
 
 
 //----------------------------------------------------------------------

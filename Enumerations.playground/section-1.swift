@@ -29,10 +29,10 @@ var day : DayOfWeek = .Wednesday
 // var day: DayOfWeek = .Wednsday produces an error
 
 // not useful
-println(day)
+print(day)
 
 // since we assiged each corresponding string, we can use rawValue to get useful value
-println(day.rawValue)
+print(day.rawValue)
 
 // can convert from String to enumerated value but it gives you an optional since string may not be a valid value
 day = DayOfWeek(rawValue: "Saturday")!
@@ -53,15 +53,15 @@ var e2: MyError = .Error("An error message")
 
 switch e1 {
 case .Ok:
-    println("no error")
+    print("no error")
 case .Error(let msg):
-    println("error: \(msg)")
+    print("error: \(msg)")
 }
 switch e2 {
 case .Ok:
-    println("no error")
+    print("no error")
 case .Error(let msg):
-    println("error: \(msg)")
+    print("error: \(msg)")
 }
 
 // show that Enumerations are value types
@@ -69,16 +69,16 @@ var e3 = e2
 e2 = .Ok
 switch e2 {
 case .Ok:
-    println("no error")
+    print("no error")
 case .Error(let msg):
-    println("error: \(msg)")
+    print("error: \(msg)")
 }
 
 // e3 is still the one with error message
 switch e3 {
 case .Ok:
-    println("no error")
+    print("no error")
 case .Error(let msg):
-    println("error: \(msg)")
+    print("error: \(msg)")
 }
 

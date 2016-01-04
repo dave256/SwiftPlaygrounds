@@ -59,7 +59,7 @@ var s = "abc"
 
 // print and println take one parameter (and optional second parameter that is a TargetStream
 // string formatting is done by \(varname)
-println("ui=\(ui) and s =\(s)")
+print("ui=\(ui) and s =\(s)")
 
 //----------------------------------------------------------------------
 // MARK: string formatting
@@ -85,10 +85,10 @@ var intStringTuple = (3, "abc")
 // this would cause an error due to strong typing
 // intStringTuple = (3, 4)
 // access tuple elments using . followed by position
-println("\(intStringTuple.0) \(intStringTuple.1)")
+print("\(intStringTuple.0) \(intStringTuple.1)")
 intStringTuple.0 = 5
 intStringTuple.1 = "def"
-println("\(intStringTuple.0) \(intStringTuple.1)")
+print("\(intStringTuple.0) \(intStringTuple.1)")
 
 // can explicitly declare with types
 var intStringTuple2: (Int, String) = (4, "def")
@@ -117,7 +117,7 @@ var dictionary = [String:Int]()
 dictionary["abc"] = 3
 dictionary["def"] = 4
 for k in dictionary.keys {
-    println("\(k) \(dictionary[k]) \(dictionary[k]!)")
+    print("\(k) \(dictionary[k]) \(dictionary[k]!)")
 }
 
 //----------------------------------------------------------------------
@@ -149,15 +149,15 @@ x = nil
 
 // unwrap the optional via if statement
 if let temp = x {
-    println("x is not nil")
+    print("x is not nil")
 }
 else {
-    println("x is nil")
+    print("x is nil")
 }
 
 x = 3
 if let temp = x {
-    println("x is not nil")
+    print("x is not nil")
 }
 
 // or if you know x is not nil, you can append a !

@@ -2,10 +2,11 @@
 // MARK: structures (value types)
 //
 
-struct Person {
+// CustomStringConvertible is a protocol
+struct Person: CustomStringConvertible {
 
-    var firstName: String;
-    var lastName = "";
+    var firstName: String
+    var lastName = ""
 
     // no func in front of init
     // if initialized all instance variables during declaration (as did with lastName above), a default initializer is automatically created
@@ -13,12 +14,12 @@ struct Person {
         // use self if parameter has same name as instance variable, otherwisee
         // self is unnecessary
 
-        self.firstName = firstName;
-        self.lastName = lastName;
+        self.firstName = firstName
+        self.lastName = lastName
     }
 
 
-    // a computed property
+    // a computed property (satisfies CustomStringConvertible)
     var description : String {
         return "\(firstName) \(lastName)"
     }
@@ -32,17 +33,18 @@ struct Person {
 }
 
 var me = Person(firstName: "Dave", lastName: "Reed")
-me.description
+print(me)
 // note how this is called without firstName: "David"
 me.changeFirstName("David", lastName: "Reed")
-me.description
+print(me)
 
 // because these are value types, dave and me refer to different data so changing one does not change the other
 var dave = me
 dave.firstName = "Dave"
 
 // still has David as firstName
+print(me)
 me
 // has Dave as firstName
+print(dave)
 dave
-

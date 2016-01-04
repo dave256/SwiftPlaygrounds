@@ -9,7 +9,7 @@ func derivative(f: (x: Double) -> Double, x: Double) -> Double {
     return (f(x: x + 0.00001) - f(x: x)) / 0.00001
 }
 
-println(derivative({ x in x * x}, 3))
+print(derivative({ x in x * x}, x: 3))
 
 // delcare MathFunction is a closure/function that takes a double and returns a double
 typealias MathFunction = (x: Double) -> Double
@@ -18,9 +18,9 @@ func alternateDerivative(x: Double, f: MathFunction) -> Double {
 }
 
 // when closure is last parameter to the function, can write it after the function call
-println(alternateDerivative(3) { x in x * x })
+print(alternateDerivative(3) { x in x * x })
 // can use $0, $1, $2, etc. to indicate the parameters in order
-println(alternateDerivative(3) { $0 * $0})
+print(alternateDerivative(3) { $0 * $0})
 
 
 // MARK: semi-practical example showing you can set a clossure variable and then call it later
@@ -30,7 +30,7 @@ class ClosureExample {
     var xChangedClosure : IntValueChangedClosure? = nil
     var x: Int = 0 {
         didSet {
-            println("did set")
+            print("did set")
             // use optional chaining so does not crash/try to call when nil
             xChangedClosure?(previousValue: oldValue, newValue: x)
         }
@@ -42,7 +42,7 @@ var c = ClosureExample()
 c.x = 3
 
 c.xChangedClosure = { (previousValue : Int, newValue: Int) in
-    println("x changed from \(previousValue) to \(newValue)")
+    print("x changed from \(previousValue) to \(newValue)")
 }
 // closure is called for both these changes
 c.x = 5

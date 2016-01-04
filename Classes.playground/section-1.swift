@@ -6,7 +6,8 @@
 //----------------------------------------------------------------------
 // MARK: classes (reference types)
 
-class Person {
+// CustomStringConvertible is a protocol
+class Person: CustomStringConvertible {
 
     var firstName: String
     var lastName = ""
@@ -27,7 +28,7 @@ class Person {
         self.init(firstName: "", lastName: "")
     }
 
-    // a computed property
+    // a computed property (satisfies CustomStringConvertible)
     var description : String {
         return "\(firstName) \(lastName)"
     }
@@ -41,12 +42,12 @@ class Person {
 }
 
 var empty = Person()
-empty.description
+print(empty)
 var me = Person(firstName: "Dave", lastName: "Reed")
-me.description
+print(me)
 // note how this is called without firstName: "David"
 me.changeFirstName("David", lastName: "Reed")
-me.description
+print(me)
 
 //----------------------------------------------------------------------
 // MARK: subclass
@@ -84,10 +85,10 @@ class Student: Person {
 }
 
 let jane = Student(firstName: "Jane", lastName: "Doe", idNumber: "123456")
-jane.description
+print(jane)
 // calls method in base class
 jane.changeFirstName("Jane", lastName: "Smith")
-jane.description
+print(jane)
 
 // classes are reference types
 // so now both jane and jane2 refer to the same object
@@ -96,7 +97,8 @@ let jane2 = jane
 
 // both jane and jane2 refer to the same object so have the new data
 jane.changeFirstName("Jane", lastName: "Doe", idNumber: "987654")
-jane.description
-jane2.description
+print(jane)
+print(jane2)
 jane2.changeFirstName("Jane", lastName: "Jones", idNumber: "987654")
-
+print(jane2)
+print(jane2)
