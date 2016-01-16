@@ -149,7 +149,7 @@ x = nil
 
 // unwrap the optional via if statement
 if let temp = x {
-    print("x is not nil")
+    print("x is not nil: \(temp)")
 }
 else {
     print("x is nil")
@@ -157,7 +157,7 @@ else {
 
 x = 3
 if let temp = x {
-    print("x is not nil")
+    print("x is not nil: \(temp)")
 }
 
 // or if you know x is not nil, you can append a !
