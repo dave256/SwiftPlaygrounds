@@ -1,5 +1,3 @@
-// Playground - noun: a place where people can play
-
 // many more details in Swift book
 // read Initialization chapter
 

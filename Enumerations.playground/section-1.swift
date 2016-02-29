@@ -28,11 +28,12 @@ var day : DayOfWeek = .Wednesday
 // vs. var day = "Sunday" which is susceptible to typo such as var day = "Wednsday"
 // var day: DayOfWeek = .Wednsday produces an error
 
-// not useful
+// prints actual value of the enumeration
 print(day)
 
-// since we assiged each corresponding string, we can use rawValue to get useful value
-print(day.rawValue)
+// since we assiged each corresponding string, we can use rawValue to get actual value
+let wed = day.rawValue
+print(wed)
 
 // can convert from String to enumerated value but it gives you an optional since string may not be a valid value
 day = DayOfWeek(rawValue: "Saturday")!

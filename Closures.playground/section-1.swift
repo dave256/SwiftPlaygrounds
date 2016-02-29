@@ -31,7 +31,7 @@ class ClosureExample {
     var x: Int = 0 {
         didSet {
             print("did set")
-            // use optional chaining so does not crash/try to call when nil
+            // use optional chaining so does not try to call when nil and crash
             xChangedClosure?(previousValue: oldValue, newValue: x)
         }
     }

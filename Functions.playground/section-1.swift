@@ -25,7 +25,7 @@ func helloFullName(first : String, last: String) -> String {
     return "hello \(first) \(last)"
 }
 
-print(helloFullName("Dave", "Reed"))
+print(helloFullName("Dave", last: "Reed"))
 
 //----------------------------------------------------------------------
 // MARK: functions that return multiple values as a tuple
@@ -123,22 +123,6 @@ func average(numbers: Double...) -> Double {
 average(3, 4, 5)
 average()
 average(10, 2, 3, 5)
-
-//----------------------------------------------------------------------
-// MARK: constant and variable parameters
-// by default formal paramenters are constant and is an error to change them
-// even though doesn't change corresponding actual parameters
-// mark them as var if want to change them
-func f(var x: Int) -> Int {
-    x++
-    return x
-}
-
-var y = f(3)
-var z = f(y)
-// note: y is still 4
-y
-z
 
 //----------------------------------------------------------------------
 // MARK: in out parameters (pass by reference)
