@@ -3,9 +3,8 @@
 
 import Foundation
 
-//: ---
-//: Constants and Variables
-//: ---
+
+//: ## Constants and Variables
 //: variables have a type that is implicitly or explictily set when initialized
 
 //: use let to declare a constant (and is preferred unless you need a variable)
@@ -24,9 +23,7 @@ variableIntegerValue += 10
 var i: Int = 5
 
 
-//: ---
-//: Integer types
-//: ---
+//: ## Integer types
 //: Swift is strongly typed
 
 //: variableIntegerValue = 42.5 // this is an error since it was originally an int
@@ -46,9 +43,7 @@ var ui32: UInt32 = 10
 var ui64: UInt64 = 10
 
 
-//: ---
-//: Floating point types
-//: ---
+//: ## Floating point types
 //: Float and Double; also Float64 and Float80
 var floatValue: Float = 3.14
 let doubleValue: Double = 3.14159
@@ -56,10 +51,7 @@ let pi = 3.14159265358979359 // defaults to Double
 
 
 
-//: ---
-//: Strings and output
-//: ---
-
+//: ## Strings and output
 var s = "abc"
 
 // print
@@ -81,9 +73,8 @@ let num: NSNumber = 3.14159
 let fs2 = String(format: "pi=%0.3f", num as Double)
 let fs3 = String(format: "pi=%@", num)
 
-//: Tuple
-//: ---
-//: (like Python tuples but typed)
+//: ## Tuple
+//: (similar to Python tuples but typed)
 //:
 //: as with all Swift types, var/let specify mutable/immutable
 
@@ -102,9 +93,7 @@ print("\(intStringTuple.0) \(intStringTuple.1)")
 var intStringTuple2: (Int, String) = (4, "def")
 
 
-//: ---
-//: Array
-//: ---
+//: ## Array
 //: ordered homogeneous type; type can be implicitly determined but explicit in this example
 
 var arrayOfInts: [Int] = [2, 3, 4]
@@ -124,9 +113,7 @@ arrayOfInts.insert(6, at: 2)
 //: note no () for count as it is a property
 i = arrayOfInts.count
 
-//: ---
-//: Dictionary
-//: ---
+//: ## Dictionary
 //: map one type to another
 var dictionary = [String:Int]()
 dictionary["abc"] = 3
@@ -135,9 +122,7 @@ for k in dictionary.keys {
     print("\(k) \(dictionary[k]) \(dictionary[k]!)")
 }
 
-//: ---
-//: Set
-//: ---
+//: ## Set
 //: unordered collection with no duplicates
 
 //: declare using generic syntax and then use brackets as array does
@@ -149,11 +134,11 @@ print(setOfInt.contains(3))
 setOfInt.remove(3)
 print(setOfInt.contains(3))
 
-//: ---
-//: Any and AnyObject
-//: ---
+//: ## Any and AnyObject
 //: Any can hold any type except function types
-//:  allows arrays, etc. of mixed types
+
+//: allows arrays, etc. of mixed types
+
 var arrayOfAny: [Any] = []
 arrayOfAny.append(2)
 arrayOfAny.append(3.5)
@@ -162,14 +147,11 @@ arrayOfAny.append("hello")
 arrayOfAny.append((2, 3))
 arrayOfAny
 
-//: AnyType can hold instance of a class
+//: AnyObject can hold instance of a class
 var arrayOfAnyObject: [AnyObject] = []
 
 
-
-//: ---
-//: Optional
-//: ---
+//: ## Optional
 //: any type can be specified as option meaning it either holds a value
 //: of that type or nil; add quesiton mark after type name
 //:
@@ -206,9 +188,7 @@ x = nil
 //: x!
 
 
-//: ---
-//: typealias (similar to typedef in C/C++)
-//: ---
+//: ## typealias (similar to typedef in C/C++)
 //: can create type synonyms
 typealias AudioSample = UInt16
 var audioSample: AudioSample = 10
