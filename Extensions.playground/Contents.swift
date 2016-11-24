@@ -5,24 +5,24 @@
 //: add a method to built-in Array struct
 
 extension Array {
-    mutating func moveItemAtIndex(_ currentIndex: Int, toIndex endIndex: Int) {
+    mutating func moveItem(at currentIndex: Int, to newIndex: Int) {
         let item = self[currentIndex]
-        if currentIndex < endIndex {
-            for i in currentIndex..<endIndex {
+        if currentIndex < newIndex {
+            for i in currentIndex..<newIndex {
                 self[i] = self[i+1]
             }
-        } else if currentIndex > endIndex {
-            //for i in currentIndex.stride(to: endIndex, by: -1) {
-            for i in stride(from: currentIndex, to: endIndex, by: -1) {
+        } else if currentIndex > newIndex {
+            //for i in currentIndex.stride(to: newIndex, by: -1) {
+            for i in stride(from: currentIndex, to: newIndex, by: -1) {
                 self[i] = self[i-1]
             }
         }
-        self[endIndex] = item
+        self[newIndex] = item
     }
 }
 
 var a = [1, 2, 3, 4, 5]
-a.moveItemAtIndex(2, toIndex: 4)
+a.moveItem(at: 2, to: 4)
 
 
 struct Person {
