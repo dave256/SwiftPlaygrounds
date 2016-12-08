@@ -1,7 +1,6 @@
 //: ## Structures (value types)
 
-// CustomStringConvertible is a protocol
-struct Person: CustomStringConvertible {
+struct Person {
 
     var firstName: String
     var lastName = ""
@@ -16,12 +15,6 @@ struct Person: CustomStringConvertible {
         self.lastName = lastName
     }
 
-
-    // a computed property (satisfies CustomStringConvertible)
-    var description : String {
-        return "\(firstName) \(lastName)"
-    }
-
     // methods
     // if a structure method, changes the instance variables, need to mark as mutating
     mutating func change(firstName: String, lastName: String) {
@@ -30,16 +23,45 @@ struct Person: CustomStringConvertible {
     }
 }
 
+//: CustomStringConvertible is a protocol
+
+//: requires description property to be implemented which is used to produce a String representation
+
+//: called when using print(aPerson) or String(describing: aPerson)
+extension Person: CustomStringConvertible {
+    var description : String {
+        return "\(firstName) \(lastName)"
+    }
+}
+
+//: generally should implement Equatable protocol for struct types
+
+//: do not need to write != as compiler translates a != b to !(a == b)
+extension Person: Equatable {
+    public static func ==(lhs: Person, rhs: Person) -> Bool {
+        return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
+    }
+}
+
 var me = Person(firstName: "Dave", lastName: "Reed")
 //: uses description property to convert to a String
 print(me)
-// note how this is called without firstName: "David"
+
 me.change(firstName: "David", lastName: "Reed")
 print(me)
 
 //: because these are value types, dave and me refer to different data so changing one does not change the other
 var dave = me
+
+if dave == me {
+    print("dave == me")
+}
+
 dave.firstName = "Dave"
+
+if dave != me {
+    print("after mutating, dave != me")
+}
 
 //: still has David as firstName
 print(me)
