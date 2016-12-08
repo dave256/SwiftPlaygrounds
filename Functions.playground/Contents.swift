@@ -57,6 +57,21 @@ func minMax(array: [Int]) -> (min: Int, max: Int) {
     return (currentMin, currentMax)
 }
 
+let emptyItems = [Int]()
+let items = [3, 1, 4, 1, 5, 9]
+print(minMax(array: items))
+
+//: can assign multiple variables to unwrap tuple
+let (min, max) = minMax(array: items)
+print("\(min) \(max)")
+
+let bounds = minMax(array: items)
+//: can use .0, .1 for tuple values
+print(bounds.0, bounds.1)
+//: or use names from return tuple
+print(bounds.min, bounds.max)
+
+
 //: returns an optional so can return nil
 func minMaxOpt(array: [Int]) -> (min: Int, max: Int)? {
     guard !array.isEmpty else {
@@ -73,20 +88,6 @@ func minMaxOpt(array: [Int]) -> (min: Int, max: Int)? {
     }
     return (currentMin, currentMax)
 }
-
-let emptyItems = [Int]()
-let items = [3, 1, 4, 1, 5, 9]
-print(minMax(array: items))
-
-//: can assign multiple variables to unwrap tuple
-let (min, max) = minMax(array: items)
-print("\(min) \(max)")
-
-let bounds = minMax(array: items)
-//: can use .0, .1 for tuple values
-print(bounds.0, bounds.1)
-//: or use names from return tuple
-print(bounds.min, bounds.max)
 
 //: assign one value and check if nil returned
 if let bounds = minMaxOpt(array: items) {
