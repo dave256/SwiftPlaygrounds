@@ -70,7 +70,7 @@ let fs1 = String(format: "i=%2d pi=%0.3f", i, doubleValue)
 
 //: note, for NSNumber, have to cast it (or use %@ but then can't format to total number of spaces or decimals
 let num: NSNumber = 3.14159
-let fs2 = String(format: "pi=%0.3f", num as Double)
+let fs2 = String(format: "pi=%0.3f", num)
 let fs3 = String(format: "pi=%@", num)
 
 //: ## Tuple
@@ -119,7 +119,7 @@ var dictionary = [String:Int]()
 dictionary["abc"] = 3
 dictionary["def"] = 4
 for k in dictionary.keys {
-    print("\(k) \(dictionary[k]) \(dictionary[k]!)")
+    print("\(k) \(String(describing: dictionary[k])) \(dictionary[k]!)")
 }
 
 //: ## Set
