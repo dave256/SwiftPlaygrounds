@@ -56,7 +56,7 @@ var s = "abc"
 
 // print
 // string interpolation is done by \(varname)
-print("ui=\(ui) and s =\(s)")
+print("ui=\(ui) and s=\(s)")
 
 //: string formatting (similar to Python/C formatting); not really built-in have to import Foundation for this to work
 
