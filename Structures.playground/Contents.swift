@@ -1,4 +1,4 @@
-//: ## Structures (value types)
+//: ## Structures (value types and no inheritance)
 
 struct Person {
 
@@ -38,9 +38,10 @@ extension Person: CustomStringConvertible {
 
 //: do not need to write != as compiler translates a != b to !(a == b)
 extension Person: Equatable {
-    public static func ==(lhs: Person, rhs: Person) -> Bool {
-        return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
-    }
+    // in newer versions of Swift, compiler generates code for you as long as each instance variable itself is equatable
+//    public static func ==(lhs: Person, rhs: Person) -> Bool {
+//        return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
+//    }
 }
 
 var me = Person(firstName: "Dave", lastName: "Reed")

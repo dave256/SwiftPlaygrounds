@@ -45,13 +45,13 @@ day.rawValue
 //:  can be useful for return value from function that might fail
 
 //:  can return Ok or an Error with an associated value
-enum MyError {
+enum MyResult {
     case Ok
     case Error(String)
 }
 
-var e1: MyError = .Ok
-var e2: MyError = .Error("An error message")
+var e1: MyResult = .Ok
+var e2: MyResult = .Error("An error message")
 
 switch e1 {
 case .Ok:

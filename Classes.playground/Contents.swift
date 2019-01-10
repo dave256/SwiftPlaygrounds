@@ -1,5 +1,5 @@
 //: ## Classes
-//: classes are reference types
+//: classes are reference types and support inheritance
 //: many more details in Swift book; read Initialization chapter
 
 //: classes may implement as many protocols but may only subclass only class (no multiple inheritance)
@@ -8,6 +8,7 @@
 
 //: ## access levels (basic idea although see documentation for all details)
 //: * private - accessible only within enclosing declaration
+//: * fileprivate - accessible anywhere in this file
 //: * internal (default) - access within module
 //: * public - accessisble anywhere
 //: * open - public and allows subclass/overriding outside module

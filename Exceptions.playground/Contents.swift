@@ -1,4 +1,4 @@
-//: Playground - noun: a place where people can play
+//: Exception Playground
 
 public enum ExampleError: Error {
     case isNegative(String)
