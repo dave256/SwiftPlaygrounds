@@ -24,7 +24,7 @@ func sampleFuction(x: Int) throws -> Int {
 
 //: can use try? to get optional if functions throws
 if let y = try? sampleFuction(x: -3) {
-    print("ok")
+    print("ok", y)
 } else {
     print("error")
 }
