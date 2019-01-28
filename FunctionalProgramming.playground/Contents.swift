@@ -48,3 +48,14 @@ for x in items {
     total5 = 2 * total5 + x
 }
 total5
+
+/*:
+ * compactMap - similar to map - apply operation in closure to each item to make new collection, except nil results are removed
+ */
+
+let inputValues = ["10", "Hello", "20", "30", "30.5"]
+// note: Int("30.5") produces nil but Int(30.5) does not
+let numbers = inputValues.compactMap() { Int($0) }
+print(numbers)
+let thirty = Int(30.5)
+print(thirty)
