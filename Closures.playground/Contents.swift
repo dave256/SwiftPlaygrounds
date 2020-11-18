@@ -46,6 +46,7 @@ c.x = 3
 
 //: note syntax: { (param, param) in closure-body }
 
+// data types are optional but can help Swift compiler compile faster
 c.xChangedClosure = { (previousValue : Int, newValue: Int) in
     print("x changed from \(previousValue) to \(newValue)")
 }
