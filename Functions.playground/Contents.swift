@@ -36,7 +36,9 @@ func helloString(name: String) -> String {
 print(helloString(name: "Jon"))
 
 func helloFullName(first : String, last: String) -> String {
-    return "hello \(first) \(last)"
+    // return "hello \(first) \(last)"
+    // in recent versions of Swift, if funciton is one statement can omit return statement
+    "hello \(first) \(last)"
 }
 
 print(helloFullName(first: "Dave", last: "Reed"))
