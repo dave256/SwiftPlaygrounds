@@ -16,7 +16,7 @@ print(direction)
 
 //: ## enumeration with a type
 
-enum DayOfWeek : String {
+enum DayOfWeek : String, CaseIterable {
     case Sunday
     case Monday
     case Tuesday
@@ -41,10 +41,17 @@ print(wed)
 day = DayOfWeek(rawValue: "Saturday")!
 day.rawValue
 
+// if conforms to CaseIteratble, can use .allCases property to get values in order
+print("iterate")
+for day in DayOfWeek.allCases {
+    print(day)
+}
+print("end iteration")
+
 //: ## enumeration with an associated value
 //:  can be useful for return value from function that might fail
 
-//:  can return Ok or an Error with an associated value
+//:  can return Ok or an Error with an associated value; version 5 and later come with a Result type
 enum MyResult {
     case Ok
     case Error(String)

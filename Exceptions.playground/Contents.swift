@@ -16,13 +16,13 @@ func sampleFuction(x: Int) throws -> Int {
     return x
 }
 
-//: must call a function with try!, try? or try if it is marked throws
+/*:
+must call a function with try!, try? or try if it is marked throws
+this would crash
+try! sampleFuction(x: -3)
 
-//: this would crash
-
-//: try! sampleFuction(x: -3)
-
-//: can use try? to get optional if functions throws
+can use try? to get optional if functions throws
+ */
 if let y = try? sampleFuction(x: -3) {
     print("ok", y)
 } else {

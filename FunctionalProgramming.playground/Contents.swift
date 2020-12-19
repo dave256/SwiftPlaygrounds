@@ -23,31 +23,31 @@ for x in items {
         newValues.append(3 * x + 1)
     }
 }
-newValues
+print(newValues)
 
 // functional approach
 let values = items.filter { $0 % 2 == 0 } .map { 3 * $0 + 1 }
-values
+print(values)
 
 // Swift reduce
 let total = items.reduce(0, +)
 
 // $0 is the accumulator variable, $1 is each item in array
 let total2 = items.reduce(0) { $0 + $1 }
-total2
+print(total2)
 
 let total3 = items.reduce(0) { $0 + 2 * $1 }
-total3
+print(total3)
 
 let total4 = items.reduce(0) { 2 * $0 + $1 }
-total4
+print(total4)
 
 // equivalent procedural version
 var total5 = 0
 for x in items {
     total5 = 2 * total5 + x
 }
-total5
+print(total5)
 
 /*:
  * compactMap - similar to map - apply operation in closure to each item to make new collection, except nil results are removed

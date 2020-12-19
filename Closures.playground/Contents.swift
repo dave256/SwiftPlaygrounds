@@ -56,3 +56,20 @@ c.x = 5
 c.x = 42
 
 
+/*:
+closure captures the state where it is declared and can access the variables
+ */
+
+func example() -> (() -> Int) {
+    var x = 42
+    let c: (() -> Int) = {
+        x += 1
+        return x
+    }
+    return c
+}
+
+let f = example()
+let y = f()
+print(y)
+

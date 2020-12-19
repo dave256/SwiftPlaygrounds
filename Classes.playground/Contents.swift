@@ -1,34 +1,35 @@
-//: ## Classes
-//: classes are reference types and support inheritance
-//: many more details in Swift book; read Initialization chapter
+/*:
+#### Classes
+classes are reference types and support inheritance
+many more details in Swift book; read Initialization chapter
 
-//: classes may implement as many protocols but may only subclass only class (no multiple inheritance)
+classes may implement as many protocols but may only subclass only class (no multiple inheritance)
 
-//: same syntax is used for subclassing and implementing a protocol
+same syntax is used for subclassing and implementing a protocol
 
-//: ## access levels (basic idea although see documentation for all details)
-//: * private - accessible only within enclosing declaration
-//: * fileprivate - accessible anywhere in this file
-//: * internal (default) - access within module
-//: * public - accessisble anywhere
-//: * open - public and allows subclass/overriding outside module
+#### access levels (same as for struct but add open)
+* private - accessible only within enclosing declaration
+* fileprivate - accessible anywhere in this file
+* internal (default) - access within module
+* public - accessisble anywhere
+* open - public and allows subclass/overriding outside module
 
-//: CustomStringConvertible is a protocol (similar to interfaces in Java)
+ */
 
-//: requires implementation of description property
 
+// CustomStringConvertible is a protocol (similar to interfaces in Java)
+// requires implementation of description property
 class Person: CustomStringConvertible {
 
     var firstName: String
-    //: can initialize when declare
-    //: if initialize all instance variables then do not need to write init method
+    // can initialize when declare
+    // if initialize all instance variables then do not need to write init method
     var lastName = ""
 
     // no func in front of init
     // if initialized all instance variables during declaration (as did with lastName above), a default initializer is automatically created
     init(firstName: String, lastName:String) {
         // use self if parameter has same name as instance variable, otherwise self is unnecessary
-
         self.firstName = firstName
         self.lastName = lastName
     }
@@ -59,7 +60,7 @@ print(me)
 me.change(firstName: "David", lastName: "Reed")
 print(me)
 
-//: ## subclass
+//: #### subclass
 
 class Student: Person {
     // additonal property
@@ -109,5 +110,5 @@ jane.change(firstName: "Jane", lastName: "Doe", idNumber: "987654")
 print(jane)
 print(jane2)
 jane2.change(firstName: "Jane", lastName: "Jones", idNumber: "987654")
-print(jane2)
+print(jane)
 print(jane2)
